@@ -52,7 +52,7 @@ const OrderDetail = React.createClass({
         }
     },
     render() {
-        let productList     = this.state.orderInfo.orderItemVoList  || [],
+        let productList     = this.state.orderInfo.orderItemVos  || [],
             receiverInfo    = this.state.orderInfo.shippingVo       || {}
         return (
             <div id="page-wrapper">
