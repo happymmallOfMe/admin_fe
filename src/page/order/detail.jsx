@@ -51,6 +51,8 @@ const OrderDetail = React.createClass({
             });
         }
     },
+    // 注意：后端传来的数据中res，即就是此处的orderInfo，其属性收件人名称为receiveName；
+    // 而orderInfo属性之一的shippingVo下面还有一个收件人，其属性名称为receiverName。
     render() {
         let productList     = this.state.orderInfo.orderItemVos  || [],
             receiverInfo    = this.state.orderInfo.shippingVo       || {}
@@ -76,7 +78,7 @@ const OrderDetail = React.createClass({
                                 <label htmlFor="subtitle" className="col-md-2 control-label">收件人：</label>
                                 <div className="col-md-5">
                                     <p type="text" className="form-control-static">
-                                        {this.state.orderInfo.receiverName}，
+                                        {this.state.orderInfo.receiveName}，
                                         {receiverInfo.receiverProvince} 
                                         {receiverInfo.receiverCity}，
                                         {receiverInfo.receiverAddress}，
